@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摄影作品集 | Photographer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+        body {
+            background: #0f0f0f;
+            color: #f1f1f1;
+            line-height: 1.6;
+        }
+        nav {
+            position: fixed;
+            width: 100%;
+            padding: 24px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+            background: linear-gradient(to bottom, #00000080, transparent);
+        }
+        .logo {
+            font-size: 22px;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+        .nav-links a {
+            color: #f1f1f1;
+            text-decoration: none;
+            margin-left: 32px;
+            font-size: 14px;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        /* 首屏大图 Hero */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            padding: 60px 40px;
+        }
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 12px;
+        }
+        .hero-text p {
+            font-size: 18px;
+            opacity: 0.8;
+            max-width: 550px;
+        }
+
+        /* 作品画廊 */
+        .gallery-section {
+            padding: 100px 40px;
+        }
+        .section-title {
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 48px;
+            border-left: 3px solid #fff;
+            padding-left: 16px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+        .gallery-item {
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        /* 关于我 */
+        .about-section {
+            padding: 100px 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+        .about-text h2 {
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+        .about-text p {
+            opacity: 0.8;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        /* 联系 */
+        .contact-section {
+            padding: 100px 40px;
+        }
+        .contact-info a {
+            display: block;
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+            margin: 16px 0;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+        .contact-info a:hover {
+            opacity: 1;
+        }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            opacity: 0.5;
+            font-size: 14px;
+            border-top: 1px solid #222;
+        }
+
+        /* 移动端适配 */
+        @media (max-width:768px){
+            nav {
+                padding:16px 20px;
+            }
+            .nav-links a {
+                margin-left:14px;
+                font-size:12px;
+            }
+            .hero {
+                padding:30px 20px;
+            }
+            .hero-text h1 {
+                font-size:32px;
+            }
+            .gallery-section, .about-section, .contact-section {
+                padding:60px 20px;
+            }
+            .about-section {
+                grid-template-columns: 1fr;
+                gap:30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="logo">PHOTO STUDIO</div>
+        <div class="nav-links">
+            <a href="#gallery">作品</a>
+            <a href="#about">关于</a>
+            <a href="#contact">联系</a>
+        </div>
+    </nav>
+
+    <!-- 首屏 -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>摄影作品集</h1>
+            <p>捕捉瞬间光影，记录人与世界的故事。时尚、人像、风光纪实摄影。</p>
+        </div>
+    </section>
+
+    <!-- 作品画廊 -->
+    <section id="gallery" class="gallery-section">
+        <h2 class="section-title">作品集</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1518893063132-36e46dbe2428" alt="摄影作品"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32" alt="摄影作品"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4" alt="摄影作品"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1502982720700-bfff97f2ecac" alt="摄影作品"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea" alt="摄影作品"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1542037104857-ffbb0b915fb1" alt="摄影作品"></div>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="about-section">
+        <div>
+            <img class="about-img" src="https://images.unsplash.com/photo-1580130376741-525a88ed5e57" alt="摄影师">
+        </div>
+        <div class="about-text">
+            <h2>关于我</h2>
+            <p>一名职业摄影师，擅长人像及时尚摄影，专注用光表达情绪，作品曾登上时装周展览。</p>
+            <p>多年跨城市拍摄经验，擅长捕捉人物自然状态，追求画面克制而富有故事感。</p>
+        </div>
+    </section>
+
+    <!-- 联系 -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">联系我</h2>
+        <div class="contact-info">
+            <a href="mailto:hello@example.com">hello@example.com</a>
+            <a href="#">Instagram / 小红书：yourname</a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Photographer Portfolio. All rights reserved.
+    </footer>
+</body>
+</html>
